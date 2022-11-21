@@ -43,4 +43,4 @@ spec:
       enabled: true
   transformationRepo:
     url: "https://github.com/zaferbozkurtsavana/apigw-repo1"
-    tag: "v1.0.0"
+    tag: "v1.0.1"
