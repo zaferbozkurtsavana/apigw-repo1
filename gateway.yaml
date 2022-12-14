@@ -8,7 +8,7 @@ metadata:
 spec:
   muhtar: "1.6.6"
   encumen: "1.2.3"
-  contextPath: "/repo11-path"
+  contextPath: "/repo1-path"
   operations:
   - name: "alis-gidis"
     description: "getAlisgidisCustomerData"
@@ -22,21 +22,23 @@ spec:
       - "300"
       - "500"
       - 400
+      - 304
+      - 303
       route:
         type: "header"
         value: "RBF_GET_ALISGIDIS_CUSTOMER_DATA"
     transformation:
       request:
-        filepath: "/repo11-path/alis-gidis/transformation/request.mjs"
+        filepath: "/repo1-path/alis-gidis/transformation/request.mjs"
         timeoutInMilliSeconds: 4000
       response:
-        filepath: "/repo11-path/alis-gidis/transformation/response.mjs"
+        filepath: "/repo1-path/alis-gidis/transformation/response.mjs"
         timeoutInMilliSeconds: 4000
     validation:
       request:
-        filepath: "/repo11-path/alis-gidis/validation/request.mjs"
+        filepath: "/repo1-path/alis-gidis/validation/request.mjs"
       response:
-        filepath: "/repo11-path/alis-gidis/validation/response.mjs"
+        filepath: "/repo1-path/alis-gidis/validation/response.mjs"
   transformationRepo:
     url: "https://github.com/zaferbozkurtsavana/apigw-repo1"
-    tag: "v1.0.6"
+    tag: "v1.0.7"
