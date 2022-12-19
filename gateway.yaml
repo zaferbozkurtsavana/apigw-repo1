@@ -1,96 +1,40 @@
 apiVersion: "xbank/v1beta1"
-kind: "Gatewayt"
+kind: "Gateway"
 metadata:
   name: "repo1"
-  version: "v3"
+  version: "v1"
   minorVersion: "0.0"
-  teamName: "B-Team"
+  teamName: "team"
 spec:
   muhtar: "1.6.6"
   encumen: "1.2.3"
-  contextPath: "/repo1-path"
+  contextPath: "/repo1"
   operations:
-  - name: "repo3-alis-gidis"
-    description: "getAlisgidisCustomerData"
+  - name: "test"
+    description: "test"
     httpVerb: "POST"
-    route: "/get-alisgidis-customer-data"
+    route: "/test"
     target:
-      httpVerb: "POST"
-      host: "core-nonprelive"
-      timeoutInSeconds: 120
+      httpVerb: "GET"
+      host: "test"
+      timeoutInSeconds: 1233
       transformationHandledExceptionCodes:
-      - "300"
-      - "500"
-      - 400
+      - 303
       route:
         type: "header"
-        value: "RBF_GET_ALISGIDIS_CUSTOMER_DATA"
+        value: "test"
     transformation:
       request:
-        filepath: "/repo1-path/repo3-alis-gidis/transformation/request.mjs"
-        timeoutInMilliSeconds: 4000
+        filepath: "/repo1/test/transformation/request.mjs"
+        timeoutInMilliSeconds: 3000
       response:
-        filepath: "/repo1-path/repo3-alis-gidis/transformation/response.mjs"
-        timeoutInMilliSeconds: 4000
+        filepath: "/repo1/test/transformation/response.mjs"
+        timeoutInMilliSeconds: 3000
     validation:
       request:
-        filepath: "/repo1-path/repo3-alis-gidis/validation/request.mjs"
+        filepath: "/repo1/test/validation/request.mjs"
       response:
-        filepath: "/repo1-path/repo3-alis-gidis/validation/response.mjs"
-  - name: "repo3-alis-gidis-operation-3"
-    description: "getAlisgidisCustomerData"
-    httpVerb: "POST"
-    route: "/get-alisgidis-customer-data"
-    target:
-      httpVerb: "POST"
-      host: "core-nonprelive"
-      timeoutInSeconds: 120
-      transformationHandledExceptionCodes:
-      - "300"
-      - "500"
-      - 400
-      route:
-        type: "header"
-        value: "RBF_GET_ALISGIDIS_CUSTOMER_DATA"
-    transformation:
-      request:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3/transformation/request.mjs"
-        timeoutInMilliSeconds: 4000
-      response:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3/transformation/response.mjs"
-        timeoutInMilliSeconds: 4000
-    validation:
-      request:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3/validation/request.mjs"
-      response:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3/validation/response.mjs"
-  - name: "repo3-alis-gidis-operation-3-operation-4"
-    description: "getAlisgidisCustomerData"
-    httpVerb: "POST"
-    route: "/get-alisgidis-customer-data"
-    target:
-      httpVerb: "POST"
-      host: "core-nonprelive"
-      timeoutInSeconds: 120
-      transformationHandledExceptionCodes:
-      - "300"
-      - "500"
-      - 400
-      route:
-        type: "header"
-        value: "RBF_GET_ALISGIDIS_CUSTOMER_DATA"
-    transformation:
-      request:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3-operation-4/transformation/request.mjs"
-        timeoutInMilliSeconds: 4000
-      response:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3-operation-4/transformation/response.mjs"
-        timeoutInMilliSeconds: 4000
-    validation:
-      request:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3-operation-4/validation/request.mjs"
-      response:
-        filepath: "/repo1-path/repo3-alis-gidis-operation-3-operation-4/validation/response.mjs"
+        filepath: "/repo1/test/validation/response.mjs"
   transformationRepo:
     url: "https://github.com/zaferbozkurtsavana/apigw-repo1"
-    tag: "v1.0.8"
+    tag: "v1.0.9"
